@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="text-center">
+    <h2>Editing Album</h2>
+  </div>  
+  <div class="float-right">
+    <%= link_to 'Albums', albums_path %>|
+    <%= link_to 'Show Album', @album %> 
+  </div>
+  <%= render 'form', album: @album %>
+</div>

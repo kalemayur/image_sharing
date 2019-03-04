@@ -1,0 +1,10 @@
+<div class="container"> 
+  <div class="text-center"> 
+    <h2>Editing Image</h2>
+  </div>  
+  <div class="float-right">
+    <%= link_to 'Show', album_image_path(@image.album_id,@image.id) %> |
+    <%= link_to 'Images', album_images_path %>
+  </div>
+  <%= render 'form', image: @image %>
+</div>

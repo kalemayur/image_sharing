@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="float-right">
+    <%= link_to 'New Album', new_album_path %>
+  </div>
+  <h1>Albums</h1>
+  <table class="table rounded table-bordered">
+    <thead clas="thead-dark">
+      <tr>
+        <th>Album name</th>
+        <th>Owner</th>
+        <th>Created date</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Images</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @albums.each do |album| %>
+        <tr>
+          <td><%= album.album_name %> </td>
+          <td><%= album.owner %></td>
+          <td><%= album.created_at.strftime("%B %d, %Y") %></td>
+          <td><%= link_to 'Show', album %></td>
+          <td><%= link_to 'Edit', edit_album_path(album) %></td>
+          <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show Images', album_images_path(album.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

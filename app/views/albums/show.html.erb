@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="float-right">
+    <%= link_to 'Edit', edit_album_path(@album) %> |
+    <%= link_to 'Albums', albums_path %>
+  </div>  
+  <p>
+    <strong>Album name:</strong>
+    <%= @album.album_name %>
+  </p>
+  <p>
+    <strong>Owner:</strong>
+    <%= @album.owner %>
+  </p>
+  <p>
+    <strong > Created date: </strong> 
+    <%= @album.created_at.strftime("%B %d, %Y") %>
+  </p>  
+</div>

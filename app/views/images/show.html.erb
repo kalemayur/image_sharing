@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="float-right">
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_album_image_path(@image.album_id,@image.id) %> |<%end%>
+    <%= link_to 'All Images',album_images_path %>
+  </div>  
+  <p>
+    <strong>Tag line:</strong>
+    <%= @image.tag_line %>
+  </p>
+  <p>
+    <strong>Owner:</strong>
+    <%= @image.album.owner %>
+  </p>
+   <strong > Created date: </strong> <%= @image.created_at.strftime("%B %d, %Y") %>
+  <div class="text-center" >
+    <%= image_tag @image.photo.url, :class => "style-image mx-auto" %>
+ </div>
+</div>

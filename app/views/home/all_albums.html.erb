@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Albums</h1>
+  <table>
+    <% @albums.each_slice(4) do |albums| %>
+      <tr>
+        <% albums.each do |album| %>
+          <td>
+            <div class="container_image">
+              <img src=<%=album.images.first.photo.url%> alt="Avatar" class="image rounded">
+              <div class="overlay">
+                <div class="tag-line"> <%= link_to "Show", home_albums_images_path(album.id), class: "btn btn-outline-dark"%></div>
+              </div>
+            </div>
+            <div align = center>
+              <div><%="Album owner:"%><%= album.owner %></div>
+              <div><%="Created date:"%> <%= album.created_at.strftime("%B %d, %Y") %></div>
+            </div>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+</div> 

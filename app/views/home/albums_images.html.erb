@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Images</h1>
+  <table>
+    <% @images.each_slice(4) do |images| %>
+      <tr>
+        <% images.each do |image| %>
+          <td>
+            <div class="container_image">
+              <img src=<%=image.photo.url%> alt="Avatar" class="image rounded">
+              <div class="overlay">
+                <div class="tag-line"> <%= link_to "Show", album_image_path(image.album_id,image.id), class: "btn btn-outline-dark"%>
+                </div>
+              </div>
+            </div>
+            <div align = center>
+              <div>
+                <%="Tag Line:"%><%= image.tag_line %>
+              </div>
+              <div>
+                <%="Image owner:"%> <%= image.album.owner %>
+              </div>
+           </div>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+ </div>
